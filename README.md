@@ -1,17 +1,22 @@
-# rinha-backend2
-Repositório para a segunda edição da rinha de backend
+# rinha-backend-q1-2024
 
-## Endpoints:
+Desafio da rinha de backend 2024/Q1
 
+## Repositório original da rinha
+[Link para repositório da rinha](https://github.com/zanfranceschi/rinha-de-backend-2024-q1)
+
+## Objetivo principal
+Controle de concorrência com o tema de crédito e débitos.
+
+## Endpoints
 ### Transações
-
 **Requisição**
 `POST /clientes/[id]/transacoes`
 ```json
 {
     "valor": 1000,
-    "tipo": "c",
-    "descricao": "descricao"
+    "tipo" : "c",
+    "descricao" : "descricao"
 }
 ```
 Onde
@@ -23,7 +28,6 @@ Onde
 Todos os campos são obrigatórios.
 
 **Resposta**
-
 `HTTP 200 OK`
 ```json
 {
@@ -35,25 +39,14 @@ Onde
 - `limite` deve ser o limite cadastrado do cliente.
 - `saldo` deve ser o novo saldo após a conclusão da transação.
 
-*Obrigatoriamente, o http status code de requisições para transações bem sucedidas deve ser 200!*
-
-**Regras**
-Uma transação de débito **nunca** pode deixar o saldo do cliente menor que seu limite disponível. Por exemplo, um cliente com limite de 1000 (R\$ 10) nunca deverá ter o saldo menor que -1000 (R\$ -10). Nesse caso, um saldo de -1001 ou menor significa inconsistência na Rinha de Backend!
-
-Se uma requisição para débito for deixar o saldo inconsistente, a API deve retornar HTTP Status Code 422 sem completar a transação!
-
-Se o atributo `[id]` da URL for de uma identificação não existente de cliente, a API deve retornar HTTP Status Code 404.
-
-## Extrato
+### Extrato
 **Requisição**
-
 `GET /clientes/[id]/extrato`
 
 Onde
 - `[id]` (na URL) deve ser um número inteiro representando a identificação do cliente.
 
 **Resposta**
-
 `HTTP 200 OK`
 ```json
 {
@@ -89,19 +82,21 @@ Onde
     - `descricao` deve ser a descrição informada durante a transação.
     - `realizada_em` deve ser a data/hora da realização da transação.
 
-**Regras**
-Se o atributo `[id]` da URL for de uma identificação não existente de cliente, a API deve retornar HTTP Status Code 404.
+## Tecnologias Utilizadas:
+- Linguagem: Go
+- Framework Web: Fiber
+- Banco de Dados: MongoDB
+- Load balancer: NGINX
 
+[![Stack](https://skillicons.dev/icons?i=go,mongodb,nginx)](https://skillicons.dev)
 
-## Cadastro Inicial de Clientes
-Para haver ênfase em concorrência durante o teste, poucos clientes devem ser cadastrados e testados. Por isso, apenas cinco clientes, com os seguintes IDs, limites e saldos iniciais, devem ser previamente cadastrados para o teste – isso é imprescindível!
+## Contato:
+- [victormatheusmx132@gmail.com](mailto:victormatheusmx132@gmail.com)
+- [Instagram](https://www.instagram.com/victorkf132/)
 
-| id | limite | saldo inicial
-| - | - | -
-| 1 | 100000 | 0
-| 2 | 80000 | 0
-| 3 | 1000000 | 0
-| 4 | 10000000 | 0
-| 5 | 500000 | 0
-
-Obs.: Não cadastre um cliente com o ID 6 especificamente, pois parte do teste é verificar se o cliente com o ID 6 realmente não existe e a API retorna HTTP 404!
+## Como Executar:
+- Clone o repositório: git clone https://github.com/Victor-132/rinha-backend-2024-q1
+- Navegue até o diretório: cd rinha-backend-2024-q1
+- Execute o docker-compose: `docker-compose up`
+- Aguarde os serviços subirem completamente.
+- Acesse a API através de: http://localhost:9999
