@@ -90,13 +90,13 @@ Onde
 
 [![Stack](https://skillicons.dev/icons?i=go,mongodb,nginx)](https://skillicons.dev)
 
-## Contato:
-- [victormatheusmx132@gmail.com](mailto:victormatheusmx132@gmail.com)
-- [Instagram](https://www.instagram.com/victorkf132/)
-
 ## Como Executar:
 - Clone o repositório: git clone https://github.com/Victor-132/rinha-backend-2024-q1
 - Navegue até o diretório: cd rinha-backend-2024-q1
 - Execute o docker-compose: `docker-compose up`
 - Aguarde os serviços subirem completamente.
 - Acesse a API através de: http://localhost:9999
+
+## Contato:
+- [victormatheusmx132@gmail.com](mailto:victormatheusmx132@gmail.com)
+- [Instagram](https://www.instagram.com/victorkf132/)
