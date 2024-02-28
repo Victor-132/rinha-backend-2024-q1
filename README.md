@@ -6,7 +6,7 @@ Desafio da rinha de backend 2024/Q1
 [Link para repositório da rinha](https://github.com/zanfranceschi/rinha-de-backend-2024-q1)
 
 ## Objetivo principal
-Controle de concorrência com o tema de crédito e débitos.
+Controle de concorrência com o tema de créditos e débitos.
 
 ## Endpoints
 ### Transações
